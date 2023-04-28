@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Input Range Slider</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+
+        <audio id="sound1" volume="0.4" src="./src/french-jazz-music-142911.mp3" autoplay loop></audio>
+        <audio id="sound2" volume="0.1" src="./src/nyc-diner-2-ambience-ambiance-by-edlundart-17933.mp3" autoplay loop></audio>
+
+
+        <video autoplay muted loop id="myVideo" >
+            <source src="./src/pexels-cottonbro-studio-4255507-2160x4096-50fps(1).mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+
+
+                <div class="form-container viewport-header">
+
+                  <h1>Tip Calculator</h1>
+                  <form id="tip-form">
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" class="form-control" id="billTotal" placeholder="Total Bill">
+                      </div>
+                    </div>
+                    <div class="form-group tipPersent">
+                      <div class="input-group">
+                        <label for="">Tip:</label>
+      
+      
+                        <input type="range" class="form-control" id="tipInput" value="0">
+                        <span class="input-group-addon" id="tipOutput"></span>
+                      </div>
+                    </div>
+      
+      
+      
+                  </form>
+
+      
+                  <!-- RESULTS -->
+                  <div id="results" class="pt-4">
+                    <h5>Results:</h5>
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">Tip amount</span>
+                        <input type="number" class="form-control" id="tipAmount" disabled>
+                      </div>
+                    </div>
+      
+                    <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon">Total Bill with Tip</span>
+                        <input type="number" class="form-control" id="totalBillWithTip" disabled>
+                      </div>
+                    </div>
+    
+                    <h2 id="totalBillWithTip" type="number" class="form-control">7</h2>
+                </div>
+
+
+
+        <script type="text/javascript">
+
+            var aud1 = document.getElementById('sound1');
+            aud1.volume = 1;
+
+            var aud2 = document.getElementById('sound2');
+            aud1.volume = 0.1;
+
+            document.querySelector('#tip-form').onchange = function(){
+
+            var bill = Number(document.getElementById('billTotal').value);
+            var tip = document.getElementById('tipInput').value;
+            document.getElementById('tipOutput').innerHTML = `${tip}%`;
+            var tipValue = bill * (tip/100)
+            var finalBill = bill + tipValue
+            console.log(finalBill)
+            var tipAmount = document.querySelector('#tipAmount')
+            var totalBillWithTip = document.querySelector('#totalBillWithTip')
+
+            tipAmount.value = tipValue.toFixed(2);
+            totalBillWithTip.value =finalBill.toFixed(2);
+
+            //Show Results
+
+            document.getElementById('results').style.display='block'
+            }
+        </script>
+    </body>
+</html>
