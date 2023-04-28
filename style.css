@@ -1,0 +1,91 @@
+@font-face {
+  font-family: MonumentExtended;
+  src: url(MonumentExtended-Regular.otf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: MonumentExtended;
+  text-transform: uppercase;
+}
+
+body {
+  font-size: 1.3em;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  padding-top: 2em;
+  mix-blend-mode: difference;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.viewport-header {
+  margin-top: 5em;
+  position: relative;
+  height: 50vh;
+  text-align: center;
+}
+
+form-container {
+  background-color: white;
+}
+
+form {
+  text-align: center;
+  z-index: 1;
+  padding-top: 2em;
+}
+
+input {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+h5 {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 4em 0 1em 0;
+  mix-blend-mode: difference;
+}
+
+#tipOutput {
+  height: 15px;
+  width: 30px;
+}
+
+.input-group {
+  justify-content: center;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+#results {
+  margin-top: 2em;
+  width: 100%;
+}
+
+@media (max-width: 960px) {
+  body {
+    font-size: 1em;
+  }
+  #results {
+    position: absolute;
+    justify-content: center;
+    bottom: 5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
