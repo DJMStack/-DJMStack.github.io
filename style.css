@@ -22,6 +22,14 @@ h1 {
   mix-blend-mode: difference;
 }
 
+span {
+  margin: 0 1em;
+}
+
+label {
+  margin: 0 1em;
+}
+
 video {
   object-fit: cover;
   width: 100vw;
